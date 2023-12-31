@@ -1,9 +1,9 @@
 import pandas as pd
 import fasttext
 from razdel import sentenize
-from aux_funcs.data_preprocessing import *
+from data_preprocessing import *
 
-model = fasttext.load_model('./models/lid.176.bin')
+model = fasttext.load_model('./pyfasttext/models/lid.176.bin')
 valid_language_set = tuple(['ba', 'kk', 'tt', 'ky', 'tr', 'az', 'tk', 'uz', 'ug', 'cv', 'krc'])
 
 def sentenize_and_predict(df, content='content'):
@@ -43,7 +43,6 @@ def sentenize_and_predict(df, content='content'):
             senteces.append(sentence_params)
         df.at[i, 'sentenсes'] = senteces
     return df
-
 def create_only_turk_text_list(df, P_valid = 0.3):
     # СОЗДАНИЕ СПИСКА ПРЕДЛОЖЕНИЙ, КОТОРЫЕ ПОДХОДЯТ ПО P_valid, не подходящие будут None в списке
     df['only_turk_content'] = pd.NA
@@ -99,5 +98,39 @@ def list_strip_none(list_with_none):
             break
     return list_with_none[l:r]
 
-def drop_dup_none(list_with_none):
-    pass
+# удаляем пропуски из предложений и разместим из в отдельных списках
+def drop_dup_none(df):
+    df['list_in_list_without_none'] = pd.NA
+    for i, row in df.iterrows():
+        list_in_list_without_none = list()
+        # создали новый список куда будем складывать предложения
+        new_list_content = list()
+        content = row['only_turk_content']
+        if content is not None:
+            for j in range(0,len(content)):
+                sent = content[j]
+                # Если стоит нон, то сделай список чистым
+                if sent is None:
+                    # положи список предложений в глобальный список и очисти список
+                    list_in_list_without_none.append(new_list_content)
+                    new_list_content = list()
+                # Если есть предложение положи его в в список
+                else:
+                    # если это последнее редложение то добавь его в список и список добавь в глобальный список
+                    if j == len(content)-1:
+                        new_list_content.append(sent)
+                        list_in_list_without_none.append(new_list_content)
+                    else:
+                        new_list_content.append(sent)
+            df.at[i, 'list_in_list_without_none'] = list_in_list_without_none
+# load file
+df = pd.read_csv('clear_re_text (ba).csv')
+# del old index
+del df['Unnamed: 0']
+# return dict after fastext 6 columns
+sentenize_and_predict(df)
+
+# creat list sent for P_valid with none, 7 columns
+create_only_turk_text_list(df)
+# даляем пропуски
+drop_dup_none(df)
