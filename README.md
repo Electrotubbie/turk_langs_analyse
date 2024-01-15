@@ -1,3 +1,5 @@
+# [EN](README.md/#analysis-of-turkic-sentences) | [RU](README.md/#анализ-тюркских-предложений)
+
 # Analysis of Turkic sentences
 
 # Description
