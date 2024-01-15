@@ -14,15 +14,28 @@ A detailed description of each function can be read directly inside the files.
 
 ### [data_preprocessing.py](data_preprocessing.py)
 
-
+The functions in this file were used to clean the text from unnecessary information, such as phone numbers, links to websites, links to photos and other constructions described by regular expressions in the file [regulars.py](regulars.py).
+Also, thanks to the functions in these files, you can perform the following actions:
+- **check_for_bad_dots** - adding spaces, if they are missing in the text after the dots at the ends of sentences;
+- **check_for_smiles** - cleaning text from unicode characters such as emoticons and various special characters;
+- **remove_dup_spaces** - removing multiple spaces and indents, as well as replacing them with a single space;
+- **text_preprocessing** is a pipeline that was used by the authors to preprocess text in datasets.
 
 ### [regulars.py](regulars.py)
 
-
+This file contains a list of regular expressions used to clean texts in the dataset from unnecessary constructions. A detailed application can be viewed in the file [data_preprocessing.py](data_preprocessing.ру).
 
 ### [datasets_analyse.py](datasets_analyse.py)
 
+This file describes the functions that have been applied to the dataset for preprocessing and validating text, checking it for belonging to a variety of Turkic languages using the [fasttext](https://fasttext.cc/) module and their models for identifying the language of the text [lid.176.bin](https://fasttext.cc/docs/en/language-identification.html) [[1]](README.md/#references).
 
+The file contains the following functions:
+- **sentenize_and_predict** - the function contains text preprocessing using functions from the file [data_preprocessing.py](data_preprocessing.py), decomposing the text into a list of sentences and describing the parameters of these sentences using the model from [fasttext](https://fasttext.cc/). You can learn more about the function in the file [datasets_analyse.py](datasets_analyse.py);
+- **create_only_turk_text_list** - this function is designed to remove unnecessary sentences (extensions **not** in Turkic languages) from the list of sentences with parameters in the dictionary created using the **sentenize_and_predict** function.
+
+As well as auxiliary functions:
+- **join_with_none** - the function pursues the same goals as the built-in Python function [**join**](https://docs.python.org/3/library/stdtypes.html?highlight=str%20join#str.join), but ignores **None** in the lists, if they are present; 
+- **list_strip_none** - deleting at the beginning and end of the list of items **None**.
 
 ### [triplets_funcs.py](triplets_funcs.py)
 
