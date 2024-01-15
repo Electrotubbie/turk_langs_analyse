@@ -48,7 +48,8 @@ Main functions:
 - **find_triplet** - a function for searching for the first triplet in the text you are looking for according to certain conditions for the maximum and minimum sentence length, as well as the relative deviation of sentence lengths (for more information on how this function works, see [triplets_funcs.py](triplets_funcs.py))
 
 Auxiliary functions:
-
+- **sentenize_text_to_list** - used to convert text of type **str** to **list[str]** using the module [**razdel**](https://natasha.github.io/razdel/) and the function [**sentenize**](https://github.com/natasha/razdel?tab=readme-ov-file#usage);
+- **check_text_type** - used to check the input data and follow up with them. If an object of the **list** type arrives at the input, then nothing will happen to the data. If an object of type **str** is received as input, this text will be converted to **list[str]** via the **sentenize_text_to_list** function.
 
 # References
 
