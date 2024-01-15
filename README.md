@@ -2,7 +2,7 @@
 
 # Analysis of Turkic sentences
 
-# Description
+## Description
 
 The functions in these files were used to analyze and prepare datasets with news in Bashkir, Kazakh and Kyrgyz languages.
 
