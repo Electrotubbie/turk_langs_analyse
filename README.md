@@ -1,5 +1,42 @@
 # Analysis of Turkic sentences
 
+# Description
+
+The functions in these files were used to analyze and prepare datasets with news in Bashkir, Kazakh and Kyrgyz languages.
+
+## How to use
+
+pass
+
+## Description of the files
+
+A detailed description of each function can be read directly inside the files.
+
+### [data_preprocessing.py](data_preprocessing.py)
+
+
+
+### [regulars.py](regulars.py)
+
+
+
+### [datasets_analyse.py](datasets_analyse.py)
+
+
+
+### [triplets_funcs.py](triplets_funcs.py)
+
+Main functions:
+- **generate_triplets_NSP** - a function for getting possible triplets and their combinations with suitable sentences from the text;
+- **shuffle_triplet_NSP** - a function for getting combinations of a triplet and another sentence;
+- **generate_triplets_SOP** - A function for getting all possible triplets and their combinations from the text. For SOP tasks, it is enough to simply find triplets and mix sentences inside them.
+- **shuffle_triplet_SOP** - a function for getting all possible combinations inside a single triplet;
+- **find_all_triplets** - a function to search for all triplets in the text. Using the **find_triplet** function, all valid triplets in the text are searched.
+- **find_triplet** - a function for searching for the first triplet in the text you are looking for according to certain conditions for the maximum and minimum sentence length, as well as the relative deviation of sentence lengths (for more information on how this function works, see [triplets_funcs.py](triplets_funcs.py))
+
+Auxiliary functions:
+
+
 # References
 
 [1] A. Joulin, E. Grave, P. Bojanowski, T. Mikolov, [Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)
@@ -47,13 +84,13 @@ pass
 
 Файл может быть использован для генерации некоторых видов **триплетов** (троек предложений, идущих в верном, а также в заведомо ложном порядке) для различных задач обучения и проверки языковых моделей.
 
-Осноные функции:
-- **generate_triplets_NSP** - 
-- **shuffle_triplet_NSP** - 
-- **generate_triplets_SOP** - 
-- **shuffle_triplet_SOP** - 
-- **find_all_triplets** - 
-- **find_triplet** - 
+Основные функции:
+- **generate_triplets_NSP** - функция для получения возможных триплетов и их комбинаций с подходящими предложениями из текста; 
+- **shuffle_triplet_NSP** - функция для получения комбинаций из триплета и другого предложения;
+- **generate_triplets_SOP** - функция для получения всех возможных триплетов и их комбинаций из текста. Для задач SOP достаточно просто найти триплеты и смешать предложения внутри них;
+- **shuffle_triplet_SOP** - функция для получения всех возможных комбинаций внутри одного триплета;
+- **find_all_triplets** - функция для поиска всех триплетов в тексте. С помощью функции **find_triplet** выполняется поиск по всем допустимым триплетам в тексте.
+- **find_triplet** - функция для поиска первого попавшегося триплета в искомом тексте согласно определённым условиям по максимальной и минимальной длине предложения, а также относительному отклонению длин предложений (более подробная информация по работе данной функции указана в [triplets_funcs.py](triplets_funcs.py))
 
 А также вспомогательные функции:
 - **sentenize_text_to_list** - применяется для преобразования текста типа **str** в **list[str]** с помощью модуля [**razdel**](https://natasha.github.io/razdel/) и функции [**sentenize**](https://github.com/natasha/razdel?tab=readme-ov-file#usage);
