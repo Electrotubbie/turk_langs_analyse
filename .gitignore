@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.venv_ipynb
 
 # Spyder project settings
 .spyderproject
@@ -162,5 +163,7 @@ cython_debug/
 # VSCode
 ./vscode
 
-# models directory
-./models
+# other directory or files
+models
+datasets
+analyse.ipynb

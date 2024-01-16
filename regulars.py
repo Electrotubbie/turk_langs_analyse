@@ -27,7 +27,7 @@ REGULARS_TO_NOTHING = [
     r'Дереккөз:',
     r'Булак:',
     r'[Дд]зен[:]?',
-    r'[KAZ\.]?NUR\.KZ',
+    r'K?A?Z?\.?NUR\.KZ',
     r'SUPER.KG'
 ]
 
