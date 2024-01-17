@@ -6,6 +6,12 @@
 
 The functions in these files were used to analyze and prepare datasets with news in Bashkir, Kazakh and Kyrgyz languages.
 
+## Datasets
+
+Here you can view the received datasets:
+- [classification of Turkic languages](https://huggingface.co/datasets/Electrotubbie/classification_Turkic_languages)
+- [Triplets for Turkic languages language models](https://huggingface.co/datasets/Electrotubbie/triplets_Turkic_languages)
+
 ## How to use
 
 In order to use the code from these files, you must:
@@ -75,6 +81,12 @@ Auxiliary functions:
 ## Описание
 
 Функции в данных файлах были применены для анализа и подготовки датасетов с новостями на башкирском, казахском и киргизском языках.
+
+## Datasets
+
+Здесь вы можете ознакомиться с полученными датасетами:
+- [classification of Turkic languages](https://huggingface.co/datasets/Electrotubbie/classification_Turkic_languages)
+- [Triplets for Turkic languages language models](https://huggingface.co/datasets/Electrotubbie/triplets_Turkic_languages)
 
 ## Как использовать функции
 
