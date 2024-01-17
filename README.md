@@ -82,7 +82,7 @@ Auxiliary functions:
 
 Функции в данных файлах были применены для анализа и подготовки датасетов с новостями на башкирском, казахском и киргизском языках.
 
-## Datasets
+## Датасеты
 
 Здесь вы можете ознакомиться с полученными датасетами:
 - [classification of Turkic languages](https://huggingface.co/datasets/Electrotubbie/classification_Turkic_languages)
