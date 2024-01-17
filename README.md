@@ -8,7 +8,20 @@ The functions in these files were used to analyze and prepare datasets with news
 
 ## How to use
 
-pass
+In order to use the code from these files, you must:
+
+Install the necessary libraries:
+```shell
+pip install -r requirements.txt
+```
+Copy the necessary files to the folder with your project.
+
+Import files into your python code, for example:
+```python
+import data_preprocessing
+import datasets_analyse
+import triplets_funcs
+```
 
 ## Description of the files
 
@@ -65,7 +78,21 @@ Auxiliary functions:
 
 ## Как использовать функции
 
-pass
+Для того, чтобы использовать код из данных файлов, необходимо:
+
+Установить необходимые библиотеки:
+```shell
+pip install -r requirements.txt
+```
+
+Скопировать необходимы файлы в папку с вашим проектом.
+
+Импортировать файлы в ваш python код, например:
+```python
+import data_preprocessing
+import datasets_analyse
+import triplets_funcs
+```
 
 ## Описание файлов
 
