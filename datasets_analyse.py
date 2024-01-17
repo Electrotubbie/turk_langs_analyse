@@ -67,6 +67,7 @@ def create_only_turk_text_list(df, column = 'sentenсes', P_valid = 0.3, drop_sm
     '''
 
     df['only_turk_content'] = pd.NA
+    df['processed'] = False
     none_rows = list()
     for i, row in df[:].iterrows():
         text = [None]
@@ -84,9 +85,13 @@ def create_only_turk_text_list(df, column = 'sentenсes', P_valid = 0.3, drop_sm
                     sent['predict_add']['turk'] <= P_valid):
                         text.append(sent['text'])
                     else:
+                        # if one of the sentences does not meet the conditions, then mark the text as 'processed'
+                        df.at[i, 'processed'] = True
                         if text[-1] != None:
                             text.append(None)
                 except:
+                    # if one of the sentences does not meet the conditions, then mark the text as 'processed'
+                    df.at[i, 'processed'] = True
                     if text[-1] != None:
                         text.append(None)
         text = list_strip_none(text) # delete all None items at the beginning and end of the list
